@@ -41,11 +41,13 @@ public class AbstractGuardianAccessMono : MonoBehaviour
         NotifyGuardianAsChanged();
     }
 
+    [ContextMenu("Notify as Changed")]
     public void NotifyGuardianAsChanged() {
         RefreshGuardian();
         m_onChangeDetected.Invoke();
     }
 
+    [ContextMenu("Refresh Guardian")]
     public void RefreshGuardian() {
         if (m_debugRootGuardian) { 
             m_debugRootGuardian.gameObject.SetActive(m_hasGuardianDefined);
